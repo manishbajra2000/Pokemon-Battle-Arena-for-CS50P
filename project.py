@@ -114,7 +114,9 @@ def simulate_battle(pok1, pok2):
         hp2 -= dmg1
         hp_bar_1 = hp_bar(hp2, pok2["hp"])
         time.sleep(0.5)
-        print(f"{pok1['name'].title()} dealt {dmg1} damage to {pok2['name'].title()}!\n")
+        print(
+            f"{pok1['name'].title()} dealt {dmg1} damage to {pok2['name'].title()}!\n"
+        )
         time.sleep(0.5)
         print(f"{pok2['name'].title()} HP:{hp_bar_1}")
 
@@ -206,6 +208,7 @@ def calculate_damage(attacker, defender, move):
 
     return round(damage)
 
+
 def hp_bar(current_hp, max_hp, length=20):
     # returns visual colored HP Bar as a string
     ratio = max(0, current_hp) / max_hp
@@ -220,7 +223,6 @@ def hp_bar(current_hp, max_hp, length=20):
         color = Fore.RED
 
     return f"{color}{'█'*filled_length}{'-'*empty_length}{Style.RESET_ALL}"
-
 
 
 if __name__ == "__main__":
